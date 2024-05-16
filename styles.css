@@ -1,0 +1,86 @@
+/* General styling for the body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+/* Styling for container elements */
+.container {
+    text-align: center;
+}
+
+/* Styling for heading 1 */
+h1 {
+    color: #333;
+}
+
+/* Styling for paragraphs */
+p {
+    color: #666;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Styling for tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+/* Styling for table headers and data cells */
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+    width: 25%;
+}
+
+/* Styling for table headers */
+th {
+    background-color: #f2f2f2;
+}
+
+/* Styling for input fields within table cells */
+td input {
+    width: calc(100% - 20px);
+    box-sizing: border-box;
+}
+
+/* Styling for buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+/* Hover state for buttons */
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Styling for red buttons */
+.btn-red {
+    background-color: #ff0000;
+}
+
+/* Hover state for red buttons */
+.btn-red:hover {
+    background-color: #cc0000;
+}
+
+/* Styling for footer */
+.footer {
+    margin-top: auto;
+}

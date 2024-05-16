@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Up Summary</title>
+    <link rel="stylesheet" href="../../styles.css"> <!-- Ensure the correct path to styles.css -->
+</head>
+<body>
+    <div class="container">
+        <h1>Stock Up Summary</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Stock to Bring</th>
+                    <th>Done</th>
+                </tr>
+            </thead>
+            <tbody id="summaryTableBody">
+                <!-- Summary table rows will be added dynamically here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        window.onload = function() {
+            // Get data from the previous page
+            const previousPageData = JSON.parse(sessionStorage.getItem('stockToBringData'));
+            if (previousPageData) {
+                const summaryTableBody = document.getElementById('summaryTableBody');
+                // Loop through the data and create table rows
+                previousPageData.forEach(item => {
+                    // Check if stock to bring is greater than zero
+                    if (item.stockToBring > 0) {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${item.item}</td>
+                            <td>${item.stockToBring}</td>
+                            <td><input type="checkbox" name="include" value="${item.item}"></td>
+                        `;
+                        summaryTableBody.appendChild(row);
+                    }
+                });
+            }
+        };
+    </script>
+</body>
+</html>
